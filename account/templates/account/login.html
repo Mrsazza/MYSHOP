@@ -8,7 +8,8 @@ Log-in
 {% block content %}
     <h1>Log-in</h1>
     <p>
-        please, use the following form to log-in:
+        please, use the following form to log-in. 
+        If you don't have an account <a href="{% url 'register' %}">signup here</a>
     </p>
     <form action="." method="POST">
         {{ form.as_p }}
