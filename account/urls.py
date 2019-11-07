@@ -8,7 +8,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/',auth_views.LogoutView.as_view(), name='logout'),
     # change password urls
-    path('password_change/', auth_views.PasswordChangeView.as_view(), name='passwod_change'),
+    path('password_change/', auth_views.PasswordChangeView.as_view(), name='password_change'),
     path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
     #password reset urls
     path('password_reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
@@ -17,4 +17,6 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     #User register url
     path('register/', views.register, name='register'),
+    #user edit url
+    path('edit/', views.edit, name='edit'),
 ]

@@ -146,7 +146,24 @@ ul.errorlist {
     float:right;
     padding-top:4px;
 }
+#subheader .user {
+    float:left;
+    padding-top:4px;
+}
 
+.user ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.user ul li{
+    display: inline-block;
+}
+.user ul li:not(:last-child):after {
+    content: "|";
+}
 #content {
     padding:0 100px;
     overflow:hidden;
