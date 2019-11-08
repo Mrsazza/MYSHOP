@@ -145,6 +145,7 @@ ul.errorlist {
 #subheader .cart {
     float:right;
     padding-top:4px;
+    
 }
 #subheader .user {
     float:left;
@@ -164,6 +165,20 @@ ul.errorlist {
 .user ul li:not(:last-child):after {
     content: "|";
 }
+
+.user ul li img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+  }
+
+.user ul li img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}  
+
 #content {
     padding:0 100px;
     overflow:hidden;

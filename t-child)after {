@@ -1,0 +1,35 @@
+[33mcommit 2748256b3d86b13459704e5b54f910e3a32412c3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Mrsazza <shahriarhossain147@gmail.com>
+Date:   Fri Nov 8 05:15:39 2019 +0600
+
+    profile added, editing profile also added
+
+[33mcommit bb1cd0c2648e094002ba7215f9bdcb010e967c1d[m
+Author: Mrsazza <shahriarhossain147@gmail.com>
+Date:   Thu Nov 7 09:23:43 2019 +0600
+
+    login redirect working
+
+[33mcommit 9cd5efc775baa06203adc794959612fa9038347e[m
+Author: Mrsazza <shahriarhossain147@gmail.com>
+Date:   Thu Nov 7 08:31:54 2019 +0600
+
+    user sign up added
+
+[33mcommit ee451f5df11011294cc98492fdba94efd1fd9ad5[m
+Author: shahriar <shahriarhossain147@gmail.com>
+Date:   Wed Nov 6 17:55:21 2019 +0600
+
+    password reset added
+
+[33mcommit dcce616d9cff7546eafef0372e50a9073d5728cc[m
+Author: shahriar <shahriarhossain147@gmail.com>
+Date:   Tue Nov 5 18:39:00 2019 +0600
+
+    password change and resetting password added
+
+[33mcommit 01162c444bfe745e612870a3f3ea6fdf391a2b61[m
+Author: shahriar <shahriarhossain147@gmail.com>
+Date:   Tue Oct 29 23:11:11 2019 +0600
+
+    First commit, added: cart, shop, orders, account. working: add to cart, shop base html, login, login redirect, media, admin panel, adding product
