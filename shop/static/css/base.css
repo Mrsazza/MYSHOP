@@ -90,7 +90,7 @@ td input[type="submit"] {
     padding:4px 10px;
 }
 
-form p label, form p input {
+form p label, form p input, form p textarea {
     float:left;
     clear:both;
 }
@@ -109,6 +109,20 @@ form p input {
     background:#efefef;
     color:#666;
     border-radius:4px;
+}
+
+form p textarea {
+    width:300px;
+    font-size:13px;
+    margin-bottom:10px;
+    padding:10px 12px;
+    border:0;
+    background:#efefef;
+    color:#666;
+    border-radius:4px;
+    resize:none;
+    box-sizing: border-box;
+    
 }
 
 ul.errorlist {
