@@ -5,6 +5,8 @@ from shop.models import Product
 
 class Order(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    mobile_number = models.CharField(max_length = 11)
+    address = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     paid = models.BooleanField(default=False)
