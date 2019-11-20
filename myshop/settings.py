@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
+
+from braintree import Configuration, Environment
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -27,6 +29,19 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['shopper.com', 'localhost', '127.0.0.1']
 
+# Braintree settings
+BRAINTREE_MERCHANT_ID = 'wtp3k2bpk9qnckbq'  # Merchant ID
+BRAINTREE_PUBLIC_KEY = 'vn33ndqmwd43tjdd'  # Public Key
+BRAINTREE_PRIVATE_KEY = 'ab636d45c931e5411903ad8b8df4a9a5'  # Private key
+
+
+Configuration.configure(
+    Environment.Sandbox,
+    BRAINTREE_MERCHANT_ID,
+    BRAINTREE_PUBLIC_KEY,
+    BRAINTREE_PRIVATE_KEY
+)
+
 
 # Application definition
 
@@ -41,7 +56,9 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
     'social_django',
+    'rest_framework',
     'django_extensions',
 ]
 
@@ -114,12 +131,13 @@ AUTHENTICATION_BACKENDS = [
 
 ]
 
-SOCIAL_AUTH_FACEBOOK_KEY = '2772650886134263' # Facebook App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = '55632273983acd9203e82fe4c837e9e9' # Facebook App Secret
+SOCIAL_AUTH_FACEBOOK_KEY = '2772650886134263'  # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '55632273983acd9203e82fe4c837e9e9'  # Facebook App Secret
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '47150302592-ehep3cj5i7l9i8h8lilbd0e24tu783hg.apps.googleusercontent.com' # Google Consumer Key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '1TE8TLXMi7s2oGixrjOEhj4P' # Google Consumer Secret
+# Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '47150302592-ehep3cj5i7l9i8h8lilbd0e24tu783hg.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '1TE8TLXMi7s2oGixrjOEhj4P'  # Google Consumer Secret
 
 
 """# Force https redirect
@@ -145,6 +163,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 STATIC_URL = '/static/'
 
