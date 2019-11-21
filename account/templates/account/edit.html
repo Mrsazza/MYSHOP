@@ -6,14 +6,31 @@
 {% endblock title %}
     
 
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+                
+
+            
+        </div>
+    </div>
+</div>
 {% block content %}
-    <h1>Edit your account</h1>
-    <p>you can edit your account using the following form:</p>
-    <form action="." method="POST" enctype="multipart/form-data">
-    {{ user_form.as_p }}
-    {{ profile_form.as_p }}
-    {% csrf_token %}
-    <p><input type="submit" value="Save changes"></p>
-    </form>
+<div class="container text-center">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+                <br><br><br>
+                <h1>Edit your account</h1>
+                <p>you can edit your account using the following form:</p>
+                <form action="." method="POST" enctype="multipart/form-data">
+                {{ user_form.as_p }}
+                {{ profile_form.as_p }}
+                {% csrf_token %}
+                <p><input type="submit" value="Save changes"></p>
+                </form>
+        </div>
+    </div>
+</div>
 {% endblock content %}
-    
+
+djhfsjhdfgsdjhg

@@ -55,10 +55,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
+    'coupons.apps.CouponsConfig',
     'orders.apps.OrdersConfig',
     'payment.apps.PaymentConfig',
     'social_django',
     'rest_framework',
+    'django_filters',
     'django_extensions',
 ]
 
@@ -139,6 +141,10 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '47150302592-ehep3cj5i7l9i8h8lilbd0e24tu783hg.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '1TE8TLXMi7s2oGixrjOEhj4P'  # Google Consumer Secret
 
+
+REDIS_HOST = 'localhost'
+REDIS_PORT = 16379
+REDIS_DB = 1
 
 """# Force https redirect
 SECURE_SSL_REDIRECT = True

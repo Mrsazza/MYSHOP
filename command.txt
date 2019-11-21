@@ -3,3 +3,6 @@ celery -A myshop worker --pool=solo -l info
 
 # run flower to see the worker dashboard
 celery -A myshop flower
+
+#run redis server
+redis-server.exe redis.windows.conf

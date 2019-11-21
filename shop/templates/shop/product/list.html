@@ -4,7 +4,16 @@
 {% if category %}{{ category.name }}{% else %}Products{% endif %}
 {% endblock %}
 {% block content %}
+
+
 <div id="sidebar">
+
+    <div>
+        <form method="get">
+            {{ filter.form.as_p }}
+            <button type="submit">Search</button>
+        </form>
+    </div>
     <h3>Categories</h3>
     <ul>
         <li {% if not category %}class="selected" {% endif %}>
@@ -17,18 +26,46 @@
         {% endfor %}
     </ul>
 </div>
+
+<br><br><br>
+{% if filter.qs %}
 <div id="main" class="product-list">
-    <h1>{% if category %}{{ category.name }}{% else %}Products
-        {% endif %}</h1>
-    {% for product in products %}
-    <div class="item">
-        <a href="{{ product.get_absolute_url }}">
-            <img src="{% if product.image %}{{ product.image.url }} {% else %}{% static "img/no_image.png" %}{% endif %}">
-        </a>
-        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
-        <br>
-        ${{ product.price }}
+<h1> Search </h1>
+<div class="row">
+    {% for product in filter.qs %}
+    <div class="col-md-3">
+        <div class="item">
+            <a href="{{ product.get_absolute_url }}">
+                <img
+                    src="{% if product.image %}{{ product.image.url }} {% else %}{% static "img/no_image.png" %}{% endif %}">
+            </a>
+            <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+            <br>
+            BDT {{ product.price }}
+        </div>
     </div>
     {% endfor %}
 </div>
+</div>
+{% else %}
+<div id="main" class="product-list">
+    <h1>{% if category %} {{ category.name }} {% else %} Products {% endif %}</h1>
+
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-3">
+            <div class="item">
+                <a href="{{ product.get_absolute_url }}">
+                    <img
+                        src="{% if product.image %}{{ product.image.url }} {% else %}{% static "img/no_image.png" %}{% endif %}">
+                </a>
+                <a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
+                <br>
+                BDT {{ product.price }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
 {% endblock %}

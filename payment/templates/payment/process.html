@@ -3,25 +3,35 @@
 {% block title %}Pay by credit card{% endblock %}
 
 {% block content %}
-<h1>Thank you</h1>
 
-<p>Your order has been successfully completed. Your order number is
-    <strong>{{ order.id }}</strong>.</p>
-<h2>Pay by credit card</h2>
-<form action="." id="payment" method="post">
-    <label for="card-number">Card Number</label>
-    <div contenteditable="true" id="card-number" class="field"></div>
+<div class="container text-center">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <br><br><br>
+            <h1>Thank you</h1>
 
-    <label for="cvv">CVV</label>
-    <div contenteditable="true" id="cvv" class="field"></div>
+            <p>Your order has been successfully completed. Your order number is
+                <strong>{{ order.id }}</strong>.</p>
+            <h2>Pay by credit card</h2>
+            <form action="." id="payment" method="post">
+                <label for="card-number">Card Number</label>
+                <div contenteditable="true" id="card-number" class="field"></div>
 
-    <label for="expiration-date">Expiration Date</label>
-    <div contenteditable="true" id="expiration-date" class="field"></div>
+                <label for="cvv">CVV</label>
+                <div contenteditable="true" id="cvv" class="field"></div>
 
-    <input type="hidden" id="nonce" name="payment_method_nonce" value="">
-    {% csrf_token %}
-    <input type="submit" value="Pay">
-</form>
+                <label for="expiration-date">Expiration Date</label>
+                <div contenteditable="true" id="expiration-date" class="field"></div>
+
+                <input type="hidden" id="nonce" name="payment_method_nonce" value="">
+                {% csrf_token %}
+                <input type="submit" value="Pay">
+            </form>
+
+        </div>
+    </div>
+</div>
+
 <!-- Load the required client component. -->
 <script src="https://js.braintreegateway.com/web/3.29.0/js/client.min.js">
 </script>

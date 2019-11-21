@@ -7,13 +7,24 @@
 
 
 {% block content %}
-    <h1>Create an account</h1>
-    <p>Please, sign up using following form:</p>
-    <form action="." method="POST">
-        {{ user_form.as_p }}
-        {% csrf_token %}
-        <p><input type="submit" value="Create my account"</p>
-    </form>
+<div class="container text-center">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <br><br><br>
+                <h1>Create an account</h1>
+                <p>Please, sign up using following form:</p>
+                <form action="." method="POST">
+                    {{ user_form.as_p }}
+                    {% csrf_token %}
+                <p><input type="submit" value="Create my account"</p>
+            </form>
+            </div>
+        </div>
+    </div>
+
+    
+        
+    
 {% endblock content %}
     
     

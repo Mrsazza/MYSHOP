@@ -42,9 +42,26 @@ Order {{ order.id }} {{ block.super }}
         <th>Address</th>
         <td>{{ order.address }}, {{ order.profile.city }}</td>
     </tr>
+    {% if order.coupon %}
+    <tr class="subtotal">
+        <th>Subtotal</th>
+        <td class="num">BDT {{ order.get_subtotal|floatformat:"2" }}</td>
+    </tr>
     <tr>
-        <th>Total amount</th>
-        <td>${{ order.get_total_cost }}</td>
+        <th>
+            "{{ order.coupon }}" coupon
+            ({{ order.discount }}% off)
+        </th>
+        <td class="num neg">
+            - BDT {{ order.get_discount|floatformat:"2" }}
+        </td>
+    </tr>
+    {% endif %}
+    <tr class="total">
+        <th>Total</th>
+        <td class="num">
+            BDT {{ order.get_total_cost|floatformat:"2" }}
+        </td>
     </tr>
     <tr>
         <th>Status</th>
@@ -67,14 +84,14 @@ Order {{ order.id }} {{ block.super }}
                 {% for item in order.items.all %}
                 <tr class="row{% cycle "1" "2" %}">
                     <td>{{ item.product.name }}</td>
-                    <td class="num">${{ item.price }}</td>
+                    <td class="num">BDT {{ item.price }}</td>
                     <td class="num">{{ item.quantity }}</td>
-                    <td class="num">${{ item.get_cost }}</td>
+                    <td class="num">BDT {{ item.get_cost }}</td>
                 </tr>
                 {% endfor %}
                 <tr class="total">
                     <td colspan="3">Total</td>
-                    <td class="num">${{ order.get_total_cost }}</td>
+                    <td class="num">BDT {{ order.get_total_cost }}</td>
                 </tr>
             </tbody>
         </table>

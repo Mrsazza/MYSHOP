@@ -6,8 +6,17 @@ Thank you
 
 {% block content %}
 
-<h1>Thank you</h1>
+<div class="container text-center">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <br><br><br>
+            <h1>Thank you</h1>
 
-<p>Your order has been successfully completed. Your order number is
-    <strong>{{ order.id }}</strong>.</p>
+            <p>Your order has been successfully completed. Your order number is
+                <strong>{{ order.id }}</strong>.</p>
+        </div>
+    </div>
+</div>
+
+
 {% endblock %}
